@@ -67,11 +67,9 @@ export const UseEffect = () => {
                 </div>
                 <ul>
                     {Users.map(u => <li key={u.id} className={selectedUser === u ? s.selected : ''} onClick={() => {
-
                         setSelectedUser(u);
                         setloginUser(u.login);
                         setimgUser(u.avatar_url);
-
                     }}>{u.login}</li>)}
                 </ul>
             </div>

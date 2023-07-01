@@ -1,0 +1,16 @@
+.useEffect {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  cursor: pointer;
+}
+
+.selected {
+  color: blueviolet;
+}
+
+.img {
+  width: 215px;
+  height: 215px;
+  border-radius: 60px; 
+}

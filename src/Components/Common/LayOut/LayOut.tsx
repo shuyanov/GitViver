@@ -15,7 +15,7 @@ const Header = ({ children }: PropsWithChildren<object>) => {
 
 const Body = ({ children }: PropsWithChildren<object>) => {
     return (
-        <FlexContainer style={{ minHeight: 1000 }} justifyContent='center'>
+        <FlexContainer style={{ minHeight: 1000, paddingTop: 100}} justifyContent='center'>
             {children}
         </FlexContainer>
     )
