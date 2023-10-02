@@ -8,9 +8,8 @@ export type HeaderProps = {
   setUser: (arg: any) => void;
 };
 export const Header: React.FC<HeaderProps> = ({ setUser }) => {
-  
-  const [searchTerm, setSearchTerm] = useState("sweet62");
-  const [tempSerch, setTempSerch] = useState("sweet62");
+  const [searchTerm, setSearchTerm] = useState("github");
+  const [tempSerch, setTempSerch] = useState("github");
 
   useEffect(() => {
     axios
@@ -24,7 +23,8 @@ export const Header: React.FC<HeaderProps> = ({ setUser }) => {
     <FlexContainer
       className={styles.GitViver}
       justifyContent="space-around"
-      alignItems="center">
+      alignItems="center"
+    >
       <h1>GitViver</h1>
       <FlexContainer alignItems="center" gap={30}>
         <input
@@ -33,12 +33,14 @@ export const Header: React.FC<HeaderProps> = ({ setUser }) => {
           value={tempSerch}
           onChange={(e) => {
             setTempSerch(e.currentTarget.value);
-          }}></input>
+          }}
+        ></input>
         <button
           className={styles.buttonSS}
           onClick={() => {
             setSearchTerm(tempSerch);
-          }}></button>
+          }}
+        ></button>
       </FlexContainer>
     </FlexContainer>
   );

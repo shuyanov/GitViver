@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlexContainer } from "../../Common/FlexContainer/FlexContainer";
-import { UseEffect } from "../../Molecules/UseEffect";
-import { SearchResult, SearchUserType, follwoType } from "../../../App";
+import { SearchUserType, follwoType } from "../../../App";
 
 import styles from "./MainPage.module.css";
 import axios from "axios";
@@ -23,14 +22,9 @@ export type mainUserResult = {
 export const MainPage: React.FC<MainPageProps> = ({ Users }) => {
   const [selectedUser, setSelectedUser] = useState<SearchUserType | null>(null);
   const [imgUser, setimgUser] = useState("");
-  const [loginUser, setloginUser] = useState("sweet62");
+  const [loginUser, setloginUser] = useState("facebook");
 
   const [FollowersUser, setFollowersUser] = useState<follwoType | null>(null);
-
-  const [mainUser, setMainUser] = useState<mainUserType[]>([]);
-  const [fullowers, setFullowers] = useState("");
-  const [following, setFollowing] = useState("");
-  const [name, setName] = useState("");
 
   // Получаем данные пользователей;
   useEffect(() => {
@@ -40,15 +34,6 @@ export const MainPage: React.FC<MainPageProps> = ({ Users }) => {
         setFollowersUser(response.data);
       });
   }, [loginUser]);
-
-  // // Получаем данные данного пользователя;
-  // useEffect(() => {
-  //   axios
-  //     .get<mainUserResult>(`https://api.github.com/users/${loginUser}`)
-  //     .then((response) => {
-  //       setMainUser(response.data.items);
-  //     });
-  // }, [loginUser]);
 
   console.log(`hi = ${FollowersUser?.login}`);
 
@@ -73,7 +58,8 @@ export const MainPage: React.FC<MainPageProps> = ({ Users }) => {
                 setSelectedUser(u);
                 setloginUser(u.login);
                 setimgUser(u.avatar_url);
-              }}>
+              }}
+            >
               {u.login}
             </div>
           ))}
