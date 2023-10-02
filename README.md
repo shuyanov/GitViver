@@ -1,3 +1,5 @@
+This project was created to study working with Axios and React hooks!!!
+
 GitViver
 
 To start, you need write
