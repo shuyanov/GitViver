@@ -4,8 +4,8 @@ GitViver
 
 To start, you need write
 
-npm install
-npm run start
+ 1)npm install
+ 2)npm run start
 
 The Technologies are used
  - React/TS
