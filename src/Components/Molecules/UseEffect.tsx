@@ -29,11 +29,11 @@ export const UseEffect = () => {
     const [Users, setUsers] = useState<SearchUserType[]>([]);
     const [FollowersUser, setFollowersUser] = useState<follwoType[]>([]);
 
-    const [tempSerch, setTempSerch] = useState('sweet62');
-    const [searchTerm, setSearchTerm] = useState('sweet62');
+    const [tempSerch, setTempSerch] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
 
     const [imgUser, setimgUser] = useState('');
-    const [loginUser, setloginUser] = useState('sweet62');
+    const [loginUser, setloginUser] = useState('');
 
     useEffect(() => {
         if (selectedUser) {
@@ -67,11 +67,9 @@ export const UseEffect = () => {
                 </div>
                 <ul>
                     {Users.map(u => <li key={u.id} className={selectedUser === u ? s.selected : ''} onClick={() => {
-
                         setSelectedUser(u);
                         setloginUser(u.login);
                         setimgUser(u.avatar_url);
-
                     }}>{u.login}</li>)}
                 </ul>
             </div>
