@@ -5,6 +5,7 @@ GitViver
 To start, you need write
 
  1)npm install
+
  2)npm run start
 
 The Technologies are used
